@@ -1,0 +1,12 @@
+# ¶Ë¿Ú
+server:
+  port: 8762
+spring:
+  application:
+    name: order-payment
+#EurekaÅäÖÃ
+eureka:
+  client:
+    #×¢²áµ½Eureka
+    service-url:
+      defaultZone: http://localhost:8761/eureka

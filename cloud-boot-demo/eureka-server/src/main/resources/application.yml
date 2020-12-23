@@ -1,0 +1,23 @@
+# 端口
+server:
+  port: 8761
+spring:
+  application:
+    name: cloud-eureka-server
+#Eureka配置
+eureka:
+  instance:
+    #eureka服务端的实例名称
+    hostname: localhost
+  server:
+    enableSelfPreservation: false
+    # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+    eviction-interval-timer-in-ms: 1000
+  client:
+    #false表示不向注册中心注册自己
+    register-with-eureka: false
+    #false表示自己端就是注册中心，职责就是维护服务实例，并不需要去检查服务
+    fetch-registry: false
+    #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
